@@ -1,0 +1,32 @@
+/* Global settings for blocks */
+@import "blocks/about_us";
+@import "blocks/our_story";
+@import "blocks/whyus";
+.bf-title {
+  @include for-size(mobile){
+    width: initial;
+    padding: 0 5rem;
+  }
+}
+
+.desc {
+  @include font-size(14.34);
+  font-family: $font_os_normal;
+}
+
+.btn-see-more{
+  @include border-radius(2em);
+  color: $bf-red;
+  background: $bf-white;
+  @include font_rubik($font-rubik_bold);
+  text-transform: uppercase;
+  @include font-size(14);
+  letter-spacing: 2px;
+  padding: 1rem 2.2rem;
+
+}
+
+.see-more-row{
+  margin-top: 3rem;
+}
+

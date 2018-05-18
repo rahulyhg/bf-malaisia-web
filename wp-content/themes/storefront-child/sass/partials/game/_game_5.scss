@@ -1,0 +1,389 @@
+$gradient-game5: linear-gradient(to right, #e2cf5d 0%, #a87d3f 41%);
+#game5-popup-lose , #game5-popup-win,#game5-popup-congratulation  {
+  cursor: pointer;
+}
+.content-popup, .content-popup-lose, .content-popup-win {
+  margin: 0 auto;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+}
+
+.content-popup-lose {
+  width: 100%;
+}
+.popup-win {
+  line-height: 1.7rem;
+  background: url($images-path + "games/pop-up-sao.png") no-repeat;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+  font-weight: normal;
+  border-radius: 5rem;
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  @include font_ellefutura('bold');
+  font-size:17px;
+  padding: 0 4rem;
+  text-transform: uppercase;
+  .title-continue{
+    width: 400px;
+  }
+  .continue-win {
+    span {
+      color: #976627;
+    }
+  }
+}
+.popup-lose {
+  background: url($images-path + "games/pop-up-lose-game-5.png") no-repeat;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  border-radius: 5rem;
+  width: 450px;
+  height: 120px;
+  background-size: contain;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  text-transform: uppercase;
+  @include font_ellefutura('bold');
+  font-size:17px;
+  .continue-lose {
+    span {
+      color: #ffff00;
+    }
+  }
+}
+.game-5 {
+    background: url($images-path + "games/bg-game-5.png") repeat center ;
+    height: auto;
+    top:0;
+    left:0;
+    background-size: cover;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  .game-content {
+    margin: 0 auto;
+    text-align: center;
+    .welcome {
+      z-index: 1;
+      margin: 0 auto;
+    }
+    .content {
+      max-width: 715px;
+      background: linear-gradient(to top, #bd9f68 0%,  #fcfacd 65%);
+      margin: 0 auto;
+      z-index: 2;
+      @include font_ellefutura('bold');
+      padding: 0;
+      border: solid 1px #ffff00;
+      .top {
+        padding: 1rem 2rem;
+        .title-one {
+          color: #ff0000;
+          @include font-size(16);
+        }
+        .title-two {
+          @include font-size(14);
+        }
+      }
+      .middle {
+        padding-left: 1rem;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        .question-detail {
+          margin-top: 2rem;
+          .active-ws {
+            display: none;
+          }
+          .round {
+          }
+          .number-question {
+            width: 100%;
+            border: solid 1px #986526;
+            border-radius: 3rem;
+            text-align: start;
+            height: 60px;
+            display: flex;
+            // @include font-size(12);            
+            .title-question {
+              width: 80%;
+              height: 100%;
+              display: flex;
+              -webkit-justify-content: center;
+              justify-content: center;
+              -webkit-flex-direction: column;
+              flex-direction: column;
+              margin-left: 0.3rem;
+            }
+            .number {
+              color: #FFFFFF;
+              width: 18%;
+              background: red;
+              border-radius: 100%;
+              height: 100%;
+              display: flex;
+              -webkit-justify-content: center;
+              justify-content: center;
+              -webkit-flex-direction: column;
+              flex-direction: column;
+              text-align: center;
+              font-size:24px;
+            }
+          }
+          .detail-answer {
+            margin-top: 2rem;
+            .choice-value {
+              // @include font-size(12);
+              font-size: 14px;
+              background: #f5f3d4;
+              @include font_ellefutura('bold');
+              border-radius: 60px;
+              padding: 0 10px;
+              border: solid 2px #986526 ;
+              //border-image: linear-gradient(0deg,#ff0,#f0f);
+              //border-image-slice: 1;
+              width: 42%;
+              height: 60px;
+              margin: 0 0.3rem 1rem 0;
+              color: #986526;
+              vertical-align: top;
+              &.right-answer{
+                background: transparent url("assets/images/games/game5/answer-bg-right.png") repeat-x center center scroll;  
+                color:#FFF;              
+              }
+            }
+          }
+        }
+      }
+      .bottom {
+        max-width: 60%;
+        background: #453c2e;
+        color: #ffffff;
+        margin: 0 auto;
+        height: 50px;
+        text-transform: uppercase;
+        @include font_ellefutura('');
+        @include font-size(12);
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+      .line-light {
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(to top, #835422 6%,  #faf7ca 100%);
+        box-shadow: 0px -3px 8px 0px #faf7ca;;
+        margin-top: 3rem;
+      }
+    }
+  }
+  .banner-page {
+    color: #a69662;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    @include font_roboto();
+    @include font-size(8);
+  }
+}
+.popup-dg {
+  max-width: none;
+}
+.congratulation-game5 {
+  background: url($images-path + "games/cm-bg-game-5.png") no-repeat center;
+  height: 100%;
+  top:0;
+  left:0;
+  background-size: cover;
+  padding: 1rem 0;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  .title-cm {
+    max-width: 30%;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  .banner-text {
+    background: url($images-path + "games/banner-text.png") no-repeat center;
+    height: 230px;
+    top: -5rem;
+    z-index: 1;
+    background-size: contain;
+
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    @include font-size(24);
+    @include font_ellefutura('bold');
+    color: #ff0000;
+    text-align: center;
+    padding: 1.5rem 10rem 0 10rem;
+  }
+  .step-button {
+    margin-top: -3rem;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    a {
+      width: 100%;
+    }
+    button{
+      background: none;
+    }
+  }
+}
+
+@include for-size("(max-width: 1200px) "){
+  .game-5 .game-content .content {
+     max-width: 75%;
+   }
+ }
+@include for-size("(min-width: 1024px) and (max-width: 1199px) "){
+  .popup-win {
+    font-size:14px;
+  }
+}
+
+
+@include for-size(mobile) {
+
+  .content-popup-win {
+    height: 100%;
+  }
+  .popup-lose {
+    font-size:14px;
+  }
+  .popup-win {
+    height: 480px;
+    font-size:14px;
+    padding-bottom: 2rem;
+    .title-continue {
+      width: 330px;
+    }
+  }
+  .question-detail {
+    max-width: 100%;
+    flex: 0 0 100%;
+    .number {
+      max-width: 5rem;
+    }
+  }
+  .product-detail {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .game-5 .game-content .content .top {
+    padding: 1rem 1rem;
+  }
+  .game-5 .game-content .content .bottom {
+    max-width: 100%;
+  }
+  .game-5 .game-content .content .middle .question-detail .number-question {
+    // @include font-size(14);
+    font-size:16px;
+  }
+  .congratulation-game5 .banner-text {
+    padding: 1.8rem 0 0 0;
+    @include font-size(20);
+  }
+}
+@include for-size ("(min-width: 822px) and (max-width: 1023px) "){
+  .congratulation-game5 .banner-text {
+    @include font-size(24);
+  }
+}
+
+@include for-size ("(max-width: 420px) "){
+  .popup-win {
+    height: 369px;
+    padding-top: 2rem;
+    @include font-size(10);
+    .title-continue {
+      width: 265px;
+    }
+  }
+  .game-5 .game-content .content .middle .question-detail .number-question .number {
+    width: 30%;
+  }
+}
+
+@include for-size("(max-width: 380px)"){
+  .popup-lose {
+    width: 100%;
+    height: 100px;
+  }
+  .popup-win {
+    width: 320px;
+    line-height: 1.3rem;
+    padding: 0 0 1rem 0;
+    .title-continue {
+      width: 100%;
+    }
+  }
+}
+
+@include for-size("(max-height: 415px) and (max-height: 1024px)") {
+
+}
+
+@include for-size("(max-height: 414px)") {
+
+  .congratulation-game5 .title-cm {
+    max-width: 30%;
+  }
+  .congratulation-game5 .banner-text {
+    height: 140px;
+    top: -4rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait){
+  .rotate-game{
+    display: block;
+    background: $bf-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .game-5 {
+    display: none;
+  }
+  #game5-popup-congratulation {
+    display: none !important;
+  }
+}
+

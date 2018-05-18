@@ -1,0 +1,99 @@
+@include for-size(("(min-width: 320px) and (max-width:1023px)")){
+  .tab-content {
+    position: relative;
+    .tab-order-mobile {
+      position: absolute;
+      z-index: 4;
+      background: $bf-dark-red ;
+      color:$bf-yellow;
+      padding-left: 1.5rem;
+      top:0;
+      .icon-down { display: block;}
+    }
+    .orders {
+      padding: 3rem 0 1rem 0;
+      border: none;
+      max-width: 99%;
+      margin: 0 auto;
+    }
+  }
+  .box {
+    width: 100%;
+    height: auto;
+    box-shadow: -1px -5px 15px 3px;
+    display: block;
+  }
+}
+a,a:hover { text-decoration: none; color: $bf-dark-red}
+.nav-link.active {
+  background-color: $bf-dark-red !important;
+  border-radius: 2rem !important;
+}
+.product-content {
+  padding: 0 1rem;
+  line-height: 1.2rem;
+  @include font_rubik($font_os_bold);
+}
+.order-detail {
+  padding: 1rem 2rem;
+  border-bottom: solid 2px $bf-dark-red;
+}
+.order-detail:last-child {
+  border-bottom: none;
+}
+.img-order {
+  width: 6rem;
+  height: auto;
+  img {
+    border: solid;
+  }
+}
+.option {
+  padding: 0;
+}
+
+.item {
+  label {
+    color: $bf-yellow;
+  }
+}
+.orders{
+  a{
+    color: white !important;
+    font-weight: bold;
+  }
+  label{ font-weight: 100;}
+  font-weight: bold;
+  background: #820f14;
+  color: white;
+  border: solid $bf-dark-red;
+  margin: 0;
+  display: block;
+  @include font_rubik($font_os_normal);
+}
+.h-line {
+  background: $bf-yellow;
+  width: 100%;
+  height: 1px;
+  margin: 1rem 0;
+}
+
+// infor
+.orders{
+  .woocommerce-button--next,.woocommerce-button--previous{
+    padding:0 10px;
+    min-width: 150px;
+    background: $bf-red;
+    color: #FFF;
+    font-size: 1rem;            
+    @include font_varela(extra-bold);
+    @include border-radius(30px);
+    text-transform: uppercase;
+    @include for-size(desktop){
+        line-height: 2rem;
+    }
+    @include for-size(mobile){
+        line-height: 3rem;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "vendor/bootstrap";
+@import "bs/var";
+@import "bs/font";
+@import "bs/reset";
+@import "bs/mixin";
+
+.mce-content-body content{
+    @include font_open_sans(normal);
+}
+
+@import 'editor_style_shared';

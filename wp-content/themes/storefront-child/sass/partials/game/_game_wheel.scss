@@ -1,0 +1,333 @@
+/* wheel */
+#wheel-banner-page{
+  @extend .game-banner-page;
+}
+.wheel-banner{
+  position: relative;
+  &-content{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+  }
+  &-button{
+    text-align: right;
+    padding-left: 50%;
+    padding-right: 0;
+    .wheel-banner-start-game{
+      display: inline-block;
+    }
+  }
+}
+
+#wheel-game-page{
+  position: relative;    
+  background: transparent url("assets/images/games/wheel/game/game-bg.jpg") no-repeat center center scroll;    
+  background-size:cover;  
+  @include for-size("(min-width:1140px)"){    
+    min-height: 972px; 
+    width: 1140px;
+  }
+  margin: 0px auto;  
+  .game-content{
+    @include for-size("(min-width:1140px)"){
+      .game-wheel{
+        float:left;
+        width:580px;
+        padding:4px 93px 0 0;      
+      }
+      .game-question{
+        float:left;
+        width: 560px;      
+      }
+    }
+  }
+  .game-wheel-bg{
+    margin:30px auto 50px;
+    display: block;
+    height: 514px;
+    padding: 0 0 0 0;        
+    &:before{
+      content: "";
+      display: block;        
+      background: transparent url("assets/images/games/wheel/game/star-bg.png") no-repeat center center scroll;
+      height: 90px;
+      width: 100px;
+      position: absolute;
+      bottom:-20px;
+      left:10px;
+      z-index: 8;
+    }
+    height: 454px;
+    width: 454px;            
+    @include box-shadow(0 0 20px 20px rgba(255,255,255,0.5));
+    @include border-radius(454px);          
+    text-align: center;
+    position: relative;
+    #wheel-canvas{
+      display: block;
+      width:454px;
+      height: 454px;
+      margin:0px auto;
+    }
+    .game-wheel-image{
+      position: absolute;
+      top:43px;
+      left:43px;
+      @include opacity(0.2);
+      display: none;
+    }
+    .game-wheel-pointer{
+      position: absolute;
+      bottom: -50px;
+      left:50%;
+      margin-left: -34px;
+    }
+    .spin-trigger{
+      position: absolute;
+      z-index: 10;
+      display: block;
+      top:0;
+      left:0;
+      right:0;
+      bottom: 0;
+    }
+  }
+  .game-question{    
+    .game-explaination{
+      margin-top: 30px;
+      margin-right: 40px;
+      background: transparent url("assets/images/games/wheel/game/game-explaination.png") no-repeat 0 0 scroll;
+      background-size: cover;
+      padding: 10px 60px 10px 100px;
+      color:#173589;
+      font-size: 16px;     
+      @include font_roboto();
+      font-weight:bold;
+    }
+    .question-panel{
+      @include for-size(desktop){
+        margin-right: 40px;
+        padding: 30px 0 0 100px;        
+      }
+      @include for-size(mobile){
+        max-width: 420px;
+        margin: 30px auto 30px;
+      }
+      &-header{
+        background:transparent url("assets/images/games/wheel/game/q-content-bg.png") no-repeat left center scroll;
+        height: 38px;
+        line-height: 38px;
+        padding-left: 52px;
+        text-align: left;
+        position: relative;
+        @include font_roboto();
+        font-size: 18px;
+        font-weight:bold;        
+        .q-number{
+          display: block;
+          background: transparent url("assets/images/games/wheel/game/q-number-bg.png") no-repeat left center scroll;
+          position: absolute;
+          left:0;
+          top:50%;
+          height: 52px;
+          line-height: 52px;
+          width:52px;
+          margin-left: -26px;
+          margin-top: -26px;
+          text-align: center;
+          color:#ffff00;
+          font-size: 26px;
+          @include font_roboto();
+          font-weight:bold;          
+        }        
+      }
+      &-content{
+        background: #173589;
+        @include border-radius(10px);
+        padding: 25px;
+        .answer-list{
+          @include display-flex();
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          @include justify-content(space-around);
+        }
+        .answer{                    
+          @include display-flex(inline-flex);
+          @include align-items(center);
+          @include flex(0 0 150px);
+          background: transparent url("assets/images/games/wheel/game/answer-bg.png") no-repeat left center scroll;
+          
+          &.wrong{
+            background: transparent url("assets/images/games/wheel/game/answer-bg-wrong.png") no-repeat left center scroll;
+          }
+          &.right{
+            background: transparent url("assets/images/games/wheel/game/answer-bg-right.png") no-repeat left center scroll;
+          }
+          height: 84px;
+          
+          margin: 10px 0px;
+          span{
+            color:#ffff00;
+            font-size: 18px;
+            @include font_roboto();
+            font-weight:bold;              
+            text-align: center;
+            display: block;
+            margin: 0px auto;
+            padding: 0;            
+          }          
+        }
+      }
+    }
+  }
+  .game-bottom-bg{    
+    display: block;    
+    background: transparent url("assets/images/games/wheel/game/game-bottom-bg.png") no-repeat center center scroll;
+    height: 102px;
+    text-align: center;
+    @include font_roboto();
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 42px;
+    color:red;
+    text-transform: uppercase;
+    @include for-size(desktop){
+      max-width: 980px;
+      padding: 5px 20px;
+      margin: 20px auto 0;
+    }
+    @include for-size(mobile){
+      max-width: 90%;
+      margin: 20px auto 0;
+      background-size: contain;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    @include for-size("(max-width:767px)"){
+      font-size: 14px;      
+      line-height: 16px;
+    }
+    .status-bar-wrap{
+      display: table;
+      width: 100%;
+      height: 100%;
+      .status-bar{
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+  .disclaimer{
+    font-size:12px;
+    max-width: 80%;
+    margin:5px auto;
+    color:#FFF;
+    text-align: center;
+  }
+  .visibility-hidden{
+    visibility: hidden;
+  }
+}
+
+.wheel-game-popup{
+  background: rgba(2,3,7, 0.9) !important;
+  .modal-dialog{
+    max-width: 1000px;
+  }
+  .modal-content{
+    background: transparent !important;
+    padding: 0 !important;            
+    position: relative;
+  }
+  .cta-button{    
+    display: block;
+    background: transparent url("assets/images/games/wheel/game/cta-bg.png") no-repeat center center scroll;
+    text-align: center;
+    width: 304px;
+    margin: 40px auto;
+    height: 59px;
+    line-height: 59px;
+    text-align: center;    
+    @include font_roboto();
+    font-weight: bold;
+    font-size: 24px;
+    color:red;
+    text-transform: uppercase;        
+  }
+  .win-congrat-title, .message
+  {    
+    color: red;
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: bold;
+    text-shadow: 0px 0px 30px yellow, 0px 0px 150px yellow, 0px 0px 40px yellow, 0px 0px 10px yellow, 0px 0px 10px yellow;
+    @include for-size("(max-width:600px)"){
+      font-size: 16px;
+      line-height: 24px;
+    }    
+  }
+  .win-congrat-subtitle{
+    color: red;
+    font-size: 22px;
+    margin-top: 20px;
+    line-height: 45px;
+    font-weight: bold;
+    text-shadow: 0px 0px 30px yellow, 0px 0px 150px yellow, 0px 0px 40px yellow, 0px 0px 10px yellow, 0px 0px 10px yellow;
+  }
+}
+
+#wheel-game-popup-win{
+  // .modal-dialog{
+  //   @include for-size("(min-width:1140px)"){      
+  //     max-width: 1000px;
+  //   }
+  // }
+  .message{
+    position: relative;
+    .message-inner{
+      top:50%;
+      left:0;
+      position: absolute;
+      width:100%;
+      height: 100%;
+      text-align: center;
+      @include for-size(mobile){      
+        top: 10%;
+      }
+    }
+  }
+  .win-congrat-image{
+    @include opacity(0.9);
+  }
+  .cta{
+    margin-top: 100px;
+    @include for-size(mobile){      
+      margin-top: 40px;
+    }    
+    // position: absolute;
+    // bottom: 10%;
+    // left:0;
+    // right:0;
+  }   
+}
+
+#wheel-game-popup-wrong{
+  .wrong-btn{
+    display: block;
+    padding: 20px 30px;    
+    margin:0px auto;
+    background: #0c09e8;
+    border:2px solid #fff;    
+    @include border-radius(50px);
+    color:#FFF;
+    @include for-size(mobile){
+      max-width: 480px;
+    }
+  }
+  .continue-text{
+    display: block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+}

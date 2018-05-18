@@ -1,0 +1,359 @@
+/* atm */
+#atm-banner-page{
+  @extend .game-banner-page;
+}
+#atm-game-page,#atm-banner-page{
+  padding: 0px;
+}
+.atm-banner{  
+  position: relative;
+  &-content{
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+  }
+  &-bottom{
+    position: relative;
+  }
+  &-subtitle{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    padding-left: 38%;
+  }
+  &-button{ 
+    position: absolute;
+    bottom:30%;
+    left:0;
+    right:0;       
+    text-align: right;
+    padding-left: 55%;
+    padding-right: 15%;
+    .start-game{      
+      display: inline-block;
+    }
+  }  
+}
+
+.atm-game{  
+  max-width: 1140px;
+  background: transparent url('assets/images/games/atm/game/atm-bg.png') no-repeat center center scroll;
+  background-size:cover;
+  position: relative;
+  &-disclaimer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 5px 0;
+    text-align: center;
+    color:#FFF;
+    font-size: 12px;
+    @include opacity(0.8);
+  }
+  .instruction-column, .atm-column, .scratch-col{
+    padding: 0;
+  }
+  &-title{
+    margin-bottom: 30px;
+    padding-top: 10px;
+
+  }
+  &-row{
+    max-width:940px;
+    margin:0px auto;
+  }
+  .atm-image-scratch{
+    display: none;
+  }
+  .atm-image{
+    position: relative;
+    width:450px;
+    @include for-size(mobile){
+      margin: 0px auto;
+    }
+    &-open{
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      z-index: 9;
+      &.lock{
+        display: none;
+      }
+    }
+    &-win{
+      position: absolute;
+      top: 80px;
+      left: 65px;
+      height: auto;
+      z-index: 11;
+      max-width: initial;
+    }
+    &-money{
+      position: absolute;
+      left:0;
+      top:0;
+      max-width: initial;
+      z-index: 11;
+    }
+    &-scratch-wrong{
+      background: transparent url("assets/images/games/atm/game/scratch-wrong.png") no-repeat center center scroll;
+      width:330px;
+      height:261px;
+      position: absolute;
+      top: 105px;
+      left: 68px;
+      padding-top: 65px;
+      padding-left: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      padding-right: 15px;      
+      text-transform: uppercase;
+    }
+    .game-play-number{
+      position: absolute;
+      width: 310px;
+      height: 64px;
+      line-height: 64px;
+      bottom: 107px;
+      left: 68px;
+      z-index: 10;
+      &.red-color{
+        color:#ff0000;
+      }
+      .num{
+        display:block;
+        float:left;
+        @include font_roboto();
+        font-size:50px;        
+        font-weight:bold;
+        width:42px;
+        text-align: center;
+        margin-left: 11px;        
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  @include for-size(desktop){
+    .instruction-column{      
+      @include order(2);  
+    }
+    .atm-column{      
+      @include order(1);
+    }
+    .scratch-col{
+      @include order(3);
+    }
+  }
+  @include for-size(mobile){
+    .instruction-column,
+    .atm-column{
+      @include flex(0 0 100%);
+      max-width:100%;
+    }
+  }
+  .instruction-row{
+    max-width: 940px - 450px;    
+    margin: 0 auto 40px;
+    @include for-size(desktop){
+      margin: 0px 0 40px 60px;
+    }
+    position: relative;
+    padding: 16px 32px 16px;
+    text-align: center;
+    @include font_roboto();
+    font-size: 24px;
+    font-weight: bold;
+    &.private-number{
+      font-weight: bold;
+      font-size: 48px;       
+    }
+    &-arrow{
+      padding: 16px 32px 0;
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        height:20px;
+        width:100%;
+        left:0;
+        bottom:-20px;        
+      }      
+    }   
+    &-red{
+      background: #ff0000;
+      color:#FFF;      
+      &:after{
+        background:transparent url('assets/images/games/atm/game/ins_red_bg.png') no-repeat center center scroll;
+      }      
+    }
+    &-yellow{
+      background: #ffff00;
+      color:#ff0000;      
+      &:after{
+        background:transparent url('assets/images/games/atm/game/ins_yellow_bg.png') no-repeat center center scroll;
+      }      
+    }
+    &-blue{
+      background: #0000ff;
+      color:#FFF;
+    }
+  }
+  .scratch-col{
+    @include for-size(mobile){
+      @include flex(0 0 100%);
+      max-width:100%;
+    }
+  }
+  .scratch-box{
+    @include font_roboto();    
+    width: 260px;    
+    margin: 0px auto 2rem;
+    &-title{
+      @include font_roboto();    
+      background:#ff0000;
+      color:#FFF;
+      line-height: 3rem;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    &-content{      
+      height: 80px;
+      width: 100%;
+      position: relative;
+    }
+    &-image{
+      width:100%;
+      height: 100%;
+      position: absolute;      
+      left:0;
+      top:0;
+    }
+    &-number{
+      background:#FFF;      
+      line-height: 80px;
+      font-size:3rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    &-valid{
+      position: absolute;
+      right:-40px;
+      bottom:15px;
+    }
+    .privatecode{
+      .scratch-box-number{
+        background: #ffff00;
+        color:#ff0000;
+      }
+    }    
+  }
+  #privatecode.hidden-code{
+    visibility: hidden;
+  }
+}
+
+#atm-game-popup{
+  .modal-content{
+    background: transparent url('assets/images/games/atm/game/popup-bg.png') repeat center center scroll;        
+    .text{
+      font-size:1.6rem;
+      @include font_roboto();
+      font-weight: bold;
+      strong{
+        font-size: 2rem;
+      }
+      .red{
+        color:#ff0000;
+      }
+    }
+    .atm-game-signupbtn{
+      display: inline-block;
+      background: transparent url('assets/images/games/atm/game/register-btn-bg.png') no-repeat center center scroll;
+      text-align: center;
+      width: 282px;
+      height: 50px;
+      line-height: 50px;
+      color:#FFF;
+      font-size:1.6rem;
+      margin-top: 1rem;
+      text-transform:uppercase;      
+    }
+  }
+}
+
+@include for-size(mobile){
+  .atm-game{    
+    .atm-image{
+      width: 290px;
+      .game-play-number{
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        bottom: 68px;
+        left: 43px;        
+        .num{
+          width: 28px;
+          text-align: center;          
+          font-size:40px;
+          margin-left: 6px;
+          &:first-child{
+            margin-left: 0;
+          }
+        }
+      }
+      &-scratch-wrong{
+        width: 286px;
+        height: 210px;
+        top: 30px;
+        left: 0;
+        padding-top: 60px;
+        padding-left: 15px;
+        font-size: 20px;              
+        background-size:cover;
+      }
+    }    
+  }
+}
+
+@include for-size("(min-width:560px) and (max-width:1023px)"){
+  .atm-column{
+    max-width: 560px !important;
+    margin:0px auto;
+  }
+  .atm-image{
+    margin-top: 15px !important;
+  }
+  .atm-image, .atm-image-scratch{
+    float:left;
+  }
+  .atm-image{
+    width:290px;
+  }
+  .atm-image-scratch{
+    width:270px;
+    display: block !important;
+  }
+  .atm-image-scratch-others{
+    display: none;    
+  }
+  .atm-game .scratch-box{
+    width: 180px;
+  }
+  .atm-game .scratch-box-title{
+    margin-bottom: 0;
+  }
+  .atm-game .scratch-box{
+    margin: 0 auto 1rem;
+  }
+}

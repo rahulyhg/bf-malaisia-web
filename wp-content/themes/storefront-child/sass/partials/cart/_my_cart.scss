@@ -1,0 +1,79 @@
+.bg-cart {
+  background: $bf-yellow ;  
+}
+.my-cart {
+  .product-quantity {
+    input {
+      box-shadow: none;
+      background: none;
+    }
+    .minus-detail, .plus-detail {
+      cursor: pointer;
+      display: inline-block;
+    }
+    label {
+      display: inline-block;
+      color: $bf-dark-red;
+    }
+    .quantity {
+      display: inline-block;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+.cart-collaterals {  
+  color: $bf-dark-red;
+  font-size: 1.4rem;
+  .cart_totals_desc-table{
+    max-width: 480px;
+    margin-left: auto;
+    td{
+      padding: 0;
+      background: transparent;
+      text-align: center;
+    }
+  }
+  .woocommerce-Price-amount.amount{
+    @include for-size(mobile){
+      color: $bf-yellow;
+    }
+  }
+  .order-total{
+    .woocommerce-Price-amount.amount{
+      font-size: 1.6rem;
+    }
+  }
+  .cart_totals{
+    float:none;
+    width:100%;
+    .cart_totals_desc{
+      @include for-size(desktop){
+        text-align: right;
+        padding: 0 15px;
+      }
+    }
+    .cart_totals_buttons{
+      text-align: center;
+      @include for-size(mobile){
+        margin: 20px 0 0;
+      }
+    }
+  }
+  label {
+    @include font_rubik($rubik);
+    margin-right: 2.5rem;
+    font-weight: bold;
+    @include font-size(14);
+  }
+  span {
+    @include font_varela(extra-bold);
+  }
+  @include for-size(mobile){
+    text-align: center;
+    background: $bf-red;
+    color: #FFF;
+    padding: 15px 0;
+  }  
+}

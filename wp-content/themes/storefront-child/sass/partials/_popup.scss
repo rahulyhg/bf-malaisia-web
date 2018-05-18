@@ -1,0 +1,422 @@
+
+div.modal{
+
+  &#modal-crossboard{
+    background: transparent;
+    .modal-dialog{
+      max-width: 1000px;
+    }
+    .modal-content{
+      background: transparent !important;
+      padding: 0 !important;            
+      position: relative;
+    }    
+    // &.isCongrat{
+    //   top: auto;
+    //   .modal-content{
+    //     height: auto;
+    //     min-height: 100%;
+    //     border-radius: 0;
+    //     padding: 0;
+    //   }
+
+    //   .modal-dialog{
+    //     max-width: 100%;
+    //     width: 100%;
+    //     height: 100%;
+    //     margin: 0;
+    //     padding: 0;
+    //     overflow-y: scroll;
+    //   }
+
+    // }
+
+    // .modal-content{
+    //   background: none !important;
+    //   outline: none;
+    //   border: none;
+    // }
+  }
+
+  &#popupWinner{
+    .winner-img, .winner-description{
+      p {
+        font-size: 1.5rem;
+        padding-top: 12px;
+      }
+      @include display-flex();
+      @include justify-content(center);
+      @include flex-direction(column);
+      .img-fluid {
+        box-shadow: 0px 4px 10px 0px;
+        border-radius: 1rem;
+      }
+    }
+
+    div.modal-header{
+      display: block;
+      padding: 0;
+      //margin: 2rem 0 1rem !important;
+      button{
+        position: static;
+      }
+    }
+    .modal-content{
+      .winner-description{
+        .text-scroll{
+          max-height: 400px;
+          overflow-y: auto;
+        }
+      }
+    }
+    .max-height-image {
+      height: 100%;
+      cursor: pointer;
+    }
+    .detail-add {
+      @include font_rubik(bold);
+      @include font-size(15);
+      margin-top: 1rem;
+      .color-ourbrand, .summary-popup {
+        color: $bf-dark-red;
+        p{
+          @include font-size(15);
+          @include font_rubik(bold);
+        }
+      }
+      .color-home {
+        color: $bf-black;
+      }
+    }
+  }
+  
+  &#popupSuccess{
+
+    .modal-dialog{
+      max-width: 100%;
+    }
+
+    .modal-content{
+      border: none;
+      background: none;
+      padding: 0;
+      // max-height: 100vh;
+      // overflow-y: scroll;
+      img#rank_1, img#rank_2, .g1-success-button img{
+        cursor: pointer;
+        @include opacity(0.8);
+        &:hover{
+          @include opacity(1);  
+        }
+      }
+    }
+
+    .g1Success{
+      position: relative;
+      .g1-success-button{
+        display: block;
+        position: absolute;
+        text-align: center;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        padding: 0 25%;
+      }
+      // .car-object{
+      //   margin-bottom: -12rem;
+      //   padding: 4rem;
+      // }
+
+      // .success-description{
+      //   background: url("assets/images/games/game1/bg-congrat-detail.png") center center no-repeat;
+      //   background-size: cover;
+      //   padding: 6rem 4rem 2rem;
+      //   color: $bf-yellow;
+      //   @include font_open_sans($font_os_bold);
+      //   @include font-size(22);
+      //   margin: 1rem;
+      // }
+    }
+  }
+
+  &.modal-successful{
+      background: url("assets/images/common/p-background.png") no-repeat center center;
+
+    .p-animate{
+      width: 1px;
+      height: 5px;
+      position: absolute;
+      background: $bf-yellow;
+      bottom: 0;
+      left: 50%;
+      img{
+        display: none;
+      }
+    }
+
+    .p-success{
+      width: auto;
+      height: fit-content;
+      background: none;
+      img{
+        display: initial;
+      }
+    }
+  }
+
+  &#modal-login-form{
+    .modal-content{
+      padding: 2rem 4rem;
+    }
+
+    .login-popup {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .modal-body{
+      .group-sub{
+        max-width: initial;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+    }
+  }
+
+  &#modal-product{
+    .modal-content {
+      background: $bf-white;
+    }
+  }
+
+  .modal-dialog{
+    margin: 0 auto;
+    min-height: auto;
+  }
+
+  &:before{
+    margin: 0;
+  }
+
+  .modal-content{
+    padding: 2rem;
+  }
+
+  .modal-body{
+    padding: 0;
+  }
+
+  div.modal-header{
+    h5{
+      margin: 0;
+    }
+    button{
+      right: 15px;
+      top: 15px;
+    }
+  }
+
+
+  p,input{
+    @include font_rubik($font-family-medium);
+  }
+
+  .modal-content{
+    background: $bf-yellow;
+  }
+
+  .modal-header{
+    border: none;
+    text-align: center;
+    padding-bottom: 2rem;
+    h5{
+      @include font_rubik($font-rubik_black);
+      @include font-size(20);
+      text-transform: uppercase;
+      color: $bf-red;
+      letter-spacing: 3px;
+      display: block;
+      width: 100%;
+    }
+    button{
+      position: absolute;
+      right: 20px;
+    }
+
+    .close-popup{
+      background: url("assets/images/common/menu-close-icon.png");
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+    }
+  }
+  .modal-body{
+    text-align: center;
+
+    p{
+      @include font-size(14);
+    }
+
+    label{
+      @include font_rubik($font-rubik_bold);
+      @include font-size(13.5);
+      color: $bf-red;
+      letter-spacing: 2px;
+      padding-left: 0;
+      padding-right: 0;
+      line-height: 1.2rem;
+    }
+
+    .submit{
+      margin: 3rem 0 0;
+      button{
+        @include font-size(14);
+        color: $bf-red;
+        background: $bf-white;
+        line-height: 1.2rem;
+        @include border-radius(25px);
+      }
+    }
+
+    .group-sub{
+      max-width: 400px;
+      margin: 0 auto;
+      label{
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
+
+    #loginform{
+      @include for-size(mobile){
+        .form-control{
+          background: #fff;
+          padding: 0.8rem 0;          
+          border-radius: 20px;        
+        }
+      }
+      .group-sub {
+        &:nth-of-type(3){
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .forgetpass{
+        margin: 0;
+        text-decoration: underline;
+        text-align: right;
+        a{
+          color: $bf-black
+        }
+      }
+
+      .btn-login{
+        @extend .btn-bf-default;
+      }
+
+      p{
+        @include font-size(14);
+        a.sign-up{
+          color: $bf-red;
+          @include font_rubik($font-rubik_bold);
+          text-decoration: none;
+        }
+      }
+
+      .submit{
+        margin-bottom: 0;
+      }
+    }
+
+    input{
+      background: $bf-white;
+      padding: 0.4rem 0;
+      border-radius: 15px;
+    }
+  }
+
+  @include for-size(mobile){
+
+    &#popupSuccess {
+      .modal-body {
+        #rank_1, #rank_2{
+          width: 50% !important;
+        }
+      }
+    }
+    &#popupWinner {
+      .bf-row{
+        @include flex-direction(row);
+      }
+      .winner-img,.winner-description{
+        max-width: 50%;
+      }
+      .winner-description{
+        .text-scroll{
+          max-height: 40rem !important;
+        }
+      }
+    }
+    
+    &.modal-successful{
+      .p-success{
+        width: 50%;
+      }
+    }
+    &#popupSuccess{
+      .g1Success{
+        .success-description{
+          padding: 6rem 0;
+        }
+      }
+    }
+
+  }
+
+  @include for-size("(min-width: 320px) and (max-width: 768px)"){
+    &#popupWinner {
+      .bf-row{
+        @include flex-direction(row);
+      }
+      .winner-img,.winner-description{
+        width: 100%;
+        max-width: 100%;
+      }
+      .winner-description{
+        .text-scroll{
+          max-height: 10rem !important;
+        }
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  //@include for-size("(min-width: 320px) and (max-width: 767px)"){
+  //  &.modal-successful{
+  //    .p-success{
+  //      width: 20%;
+  //    }
+  //  }
+  //}
+
+  @include for-size("(min-height: 360px) and (max-height: 480px)") {
+    #loginform .submit {
+      margin: 0;
+    }
+    .login-popup {
+      height: 85%;
+    }
+    .sign-in-account {
+      padding: 4rem 0 ;
+    }
+  }
+  @include for-size("(max-height: 320px)") {
+    .login-popup {
+      height: 100%;
+    }
+    #loginform .submit {
+      margin: 0;
+    }
+  }
+}

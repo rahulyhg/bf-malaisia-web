@@ -1,0 +1,134 @@
+.block-game-list{
+    @include for-size(mobile){
+        .col-md-6{
+            max-width: 100%;
+            @include flex(0 0 100%);
+        }
+    }    
+    .game-item-list .game-item-wrap{
+        position: relative;        
+        @include for-size("(max-width:1023px)"){
+            .game-item{
+                max-width: 666px;
+                margin:0px auto;
+                position: relative;
+                padding-top: 3rem;
+            }
+            .game-item:before{
+                content: "";
+                position: absolute;
+                display: block;
+                height:1px;
+                width:80%;
+                top:0rem;                
+                left:10%;
+                background: $bf-red;
+            }
+
+            &:first-child .game-item:before{
+                display:none;
+            }
+        }        
+    }
+    .game-item{
+        position: relative;
+        text-align: center;        
+        @include for-size(desktop){
+            margin-top: 4rem;
+            overflow: hidden;            
+        }        
+        .game-item-image{
+            display: block;            
+            &:hover{
+                opacity: 1;
+                -webkit-animation: flash 1.5s;
+                animation: flash 1.5s;  
+            }            
+            @include for-size(desktop){
+                position: absolute;
+                width:260px;
+                height:100%;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-size: 260px 260px;
+                img{
+                    display: none;
+                }
+            }
+            @include for-size(mobile){
+                text-align: center;
+                background-size:0;
+                background-image: none!important;
+                margin-bottom: 3rem;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .images-hover {
+            &:hover{
+                opacity: 1;
+                -webkit-animation: flash 1.5s;
+                animation: flash 1.5s;
+            }
+        }
+    }    
+}
+
+.block-game-list .game-item{
+    .game-item-meta{
+        position: relative;        
+        form,p{
+            margin:0;
+        }            
+        .game-item-title{
+            color: $bf-red;
+            @include font_rubik($font_rubik_bold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size:2rem;
+            margin-bottom: 1rem;
+        }            
+        @include for-size(desktop){
+            margin-left: 260px;
+            padding: 0 0 0 25px;                
+        }
+        @include for-size(mobile){
+            font-size: 1.2rem;
+        }
+    
+        .game-excerpt{            
+            text-align: justify;
+            @include for-size(desktop){
+                font-size: 1rem;
+                line-height: 2rem;
+                max-height: 14rem;
+                p{
+                    height: 100%;
+                    overflow: hidden;
+                }
+                overflow: hidden;
+            }
+        }
+
+        .btn-playnow{
+            margin:1rem 5px 0;
+            padding:0;
+            width: 150px;
+            background:#FFF;
+            color: $bf-red;
+            font-size: 1rem;            
+            @include font_varela(extra-bold);
+            @include border-radius(30px);
+            text-transform: uppercase;
+            @include for-size(desktop){
+                line-height: 2rem;
+            }
+            @include for-size(mobile){
+                line-height: 3rem;
+                margin: 3rem 0;
+            }
+        }
+    }    
+}

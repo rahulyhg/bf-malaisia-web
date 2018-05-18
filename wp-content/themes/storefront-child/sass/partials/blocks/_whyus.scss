@@ -1,0 +1,58 @@
+
+// why choose us
+@include for-size("(min-width: 320px) and (max-width: 1023px)") {
+  .detail {
+    background: none !important;
+  }
+}
+@include for-size("(min-width: 992px) and (max-width: 1023px)") {
+    .bf-us-description {
+      padding: 1.5rem 35% !important;
+    }
+}
+@include for-size("(min-width: 768px) and (max-width: 991px)") {
+  .bf-us-description {
+    max-width: 45%;
+    margin: 0 auto;
+  }
+}
+@include for-size("(min-width: 567px) and (max-width: 767px)") {
+  .desc {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
+
+.why-us {
+  background: $bf-yellow;
+  .title {
+    text-align: center;
+    padding: 2rem;
+    text-transform: uppercase;
+    height: 8rem;
+    h4{
+      display: inline-block;
+      border: solid $bf-dark-red;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      @include font_rubik($font_rubik_bold);
+      @include font-size(14);
+      color: $bf-dark-red;      
+    }
+  }
+  .detail {
+    border-radius: 2rem;
+    background: white;
+    .desc {
+      @include font_rubik($font_os_semibold);
+      @include font-size(14);
+      text-align: justify;
+      padding: 1.5rem;
+
+    }
+    .img-fluid {
+      border-radius: 2rem;
+    }
+  }
+}
+//end why choose us

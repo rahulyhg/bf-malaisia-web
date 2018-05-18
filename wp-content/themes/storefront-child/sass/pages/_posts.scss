@@ -1,0 +1,83 @@
+.single-post{
+    @include for-size(desktop){        
+        .post-content-wrap{            
+            @include display-flex();
+            .post-first-col{
+                @include order(1);
+            }
+            .post-second-col{
+                @include order(2);
+            }
+            .post-first-col,.post-second-col{
+                width:50%;
+            }
+        }
+    }
+    @include for-size(mobile){
+        .post-content-wrap{
+            padding: 0 2rem;
+        }
+        .post-first-col,.post-second-col{
+            width:100%;
+            max-width: 100%;
+            @include flex(0 0 100%);
+        }        
+    }
+    .post-title{
+        @include font_rubik($font_rubik_bold);        
+        text-transform: uppercase;
+        color: $bf-red;
+        text-align: center;
+        @include for-size(desktop){
+            font-size:2rem;
+            line-height: 2.4rem;
+            margin:0 0 1rem;
+        }
+        @include for-size(mobile){
+            font-size:1.8rem;
+            line-height: 2rem;            
+            margin:0 0 3rem;
+        }
+    }
+    .post-image{
+        text-align: center;
+        margin-bottom: 3rem;        
+        img{
+            border: 8px solid #FFF;
+            margin:0px auto;
+        }
+    }
+    .post-content{
+        text-align: justify;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        p{
+            margin-bottom: 0;
+        }
+        @include for-size(mobile){
+            margin-bottom: 3rem;            
+        }
+    }
+    .more-post .title{
+        font-weight: bold;
+        color: $bf-red;
+        font-size:1.4rem;
+        line-height: 1.4rem;
+        margin: 0 0 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .more-post .list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        a{
+            color: $bf-red;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            text-decoration: underline;
+            @include font_open_sans(bold);
+        }
+    }
+}

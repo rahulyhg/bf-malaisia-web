@@ -1,0 +1,88 @@
+.thank-page {
+  background: #FFF url('assets/images/common/checkout-confirmation-bg.png') no-repeat center center;
+  position: relative;
+  padding: 0 0 70px;  
+  @include for-size(mobile){
+    .container{
+      padding: 0;
+    }
+  }
+  .content-page{
+    text-align: center;
+    padding-top: 50px;
+    .bang-detail {
+      position: relative;
+      @include for-size(desktop){
+        width:984px;
+        height: 504px;
+        margin:0px auto 0;
+        background: transparent url(assets/images/common/bang.png) no-repeat center center;
+        background-size: 100% 100%;        
+      }      
+      @include for-size(mobile){
+        width: 320px;
+        height: 530px;
+        margin: 0px auto 178px;
+        background: transparent url(assets/images/common/bang-mobile.png) no-repeat center top;
+        background-size:100% 100%;
+      }
+    }
+    .detail-page {
+      @include for-size(desktop){
+        margin: 0px auto;
+        max-width: 830px;
+        padding: 65px 20px 0 150px;        
+      }
+      @include for-size(mobile){        
+        padding: 20px 40px;
+      }      
+      .confirmation-text{
+        text-align: justify;
+        @include font_open_sans(normal);        
+        @include for-size(desktop){
+          font-size: 13px;
+          padding-left: 60px;
+          padding-right: 60px;
+        }        
+      }
+      h1{
+        text-transform: uppercase;
+        @include font_open_sans($font_os_bold);
+        font-weight: 900;
+        color: $bf-red;
+        margin: 30px 0 10px;
+      }      
+      p{
+        margin-bottom: 0;
+      }
+    }
+    .hd-people {
+      @include for-size(desktop){
+        &.hd-mobile{
+          display: none;
+        }
+        position: absolute;
+        top: 30px;
+        left: -102px;
+      }
+      @include for-size(mobile){
+        &.hd-desktop{
+          display: none;
+        }
+        position: absolute;
+      }
+    }
+
+    .bf-title{
+      background: $bf-yellow;
+      color: $bf-red;
+      font-size: 16px;
+      padding: 0 32px;
+      margin-top: 10px;
+      @include for-size(mobile){
+        font-size: 14px;
+        padding: 0 16px;
+      }
+    }
+  }
+}

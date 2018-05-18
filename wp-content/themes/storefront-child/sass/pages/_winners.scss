@@ -1,0 +1,76 @@
+@import "partials/blocks/articles";
+
+.block-winner-list{
+  .block-content{
+    margin: 3rem auto;
+    .winner-img{
+      position: relative;
+      cursor: pointer;
+      &:hover{
+          opacity: 1;
+          -webkit-animation: flash 1.5s;
+          animation: flash 1.5s;
+      }
+      &:after {
+        background: url(assets/images/common/start-icon.png) no-repeat center bottom;
+        display: inline-block;
+        position: absolute;
+        height: 12rem;
+        bottom: -2.5em;
+        left: 0;
+        right: 0;
+      }
+    }
+    .winner-meta-data{
+      margin-top: 3rem;
+    }
+
+    img{
+      margin: 0 auto;
+      @include box-shadow(0px 6px 16px 6px rgba(0,0,0,0.25));
+      border-radius: 15px;
+      
+    }
+
+    h4,h5,p{
+      text-align: center;
+    }
+
+    h4{
+      text-transform: uppercase;
+      @include font-size(17);
+      @include font_varela(bold);      
+    }
+
+
+    h5{
+      p{
+        @include font-rubik($font-rubik_bold);
+        @include font-size(18);
+        color: $bf-red;
+        letter-spacing: 0px;
+        word-spacing: 3px;
+      }
+    }
+
+  }
+  @include for-size(desktop){
+    #post-navigation{
+      margin-bottom: 2rem;
+    }
+  }
+  @include for-size(mobile){
+    .block-content{
+      margin: 5rem auto 0;
+    }
+
+    &.bf-content-cover{
+      margin-bottom: 0;
+    }
+
+    #post-navigation{
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+  }
+}

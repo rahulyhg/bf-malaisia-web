@@ -1,0 +1,32 @@
+
+/* global */
+body.bf-game-layout {
+  margin-top:0;
+  background: rgba($color: #000000, $alpha: 1);
+}
+.bf-game-page-table{
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.bf-game-page-cell{
+  display: table-cell;
+  vertical-align: middle;
+}
+.game-banner-page{
+  max-width: 800px;
+  padding: 0 15px;
+  margin: 0px auto;
+  &.hidden{
+    display: none;
+  }
+}
+.rotate-game{  
+  @include for-size(desktop){
+    display: none;
+  }
+}
+@import "partials/game/game_atm";
+@import "partials/game/game_wheel";
+@import "partials/game/game_crossboard";
+@import "partials/game/game_5";

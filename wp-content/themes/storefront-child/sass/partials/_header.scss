@@ -1,0 +1,331 @@
+
+$mobile_navbar_height:60px;
+.navbar{
+    padding: 0;
+}
+body.navbar-menu-open{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    @include for-size(desktop){    
+        margin-top: 95px;
+        #page-header{    
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            background:#FFF;
+            height: 95px;
+            z-index: $z_index_navbar_menu;
+        }    
+        &.admin-bar{        
+            #page-header{            
+                top: 32px;
+            }
+        }     
+    }    
+    @include for-size(mobile){
+        margin-top: 80px;    
+        #page-header{    
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            background:#FFF;
+            height: 80px;
+            z-index: $z_index_navbar_menu;
+        }
+        #wpadminbar{
+            display: none!important;
+        }
+    }
+}
+
+.modal-backdrop{
+    z-index: $z_index_modal;
+}
+.modal{
+    z-index: $z_index_modal + 1;
+}
+
+.bf-navbar{
+    padding: 10px 0;
+    position: relative;
+    &:before{
+        content: "";
+        background: transparent url("assets/images/common/nav-bottom.png") repeat center center scroll;        
+        width: 100%;
+        height: 12px;
+        position: absolute;
+        bottom: -12px;
+        z-index: 1;        
+    }
+}
+
+.bf-navbar-menu-head{
+    @include for-size(mobile){
+        @include display-flex();
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+        @include justify-content(flex-start);
+        @include align-items(center);
+        > a:nth-of-type(1){
+            text-align: left;
+        }
+        > a:nth-of-type(2){
+            text-align: center;
+        }
+        > a:nth-of-type(3){
+            text-align: right;
+        }
+    }        
+    @include for-size(desktop){
+        position: absolute;
+        height:75px;
+    }
+}
+.bf-navbar-content{
+    margin: 0 0 0 75px;
+    @include for-size(desktop){
+        .bf-navbar-menu{      
+            padding: 0;
+            text-align: right;
+            .bf-navbar-link{                
+                line-height: 25px;
+                display: inline-block;                
+                padding: 0px;
+                margin: 12.5px 1rem;
+                color: $bf-gray;
+                @include font-size(16);
+                @include font_varela(semi-bold);
+                /**@include text-shadow( rgba(0,0,0,0.85) 1px 0px 3px );*/
+                text-transform:uppercase;
+                &-deactive{
+                    color:#ccc;
+                    @include text-shadow( none );
+                    text-decoration: none;
+                    cursor: default;
+                    span.my-cart-items-count {
+                      display:none !important;
+                    }
+                }
+                &:first-child{
+                    margin-left: 2rem;
+                }
+                &.current-link{
+                    color: $bf-red;
+                }
+                &.my-carts{
+                    position: relative;
+                    .my-cart-items-count{                        
+                        display: inline-block;
+                        color:#FFF;
+                        background: $bf-red;                        
+                        width:35px;
+                        text-align: center;
+                        @include text-shadow( none );
+                        @include border-radius(35px);
+                    }
+                }
+                &.login{
+                    @include text-shadow( none );
+                    box-sizing: border-box;
+                    border: 1px solid $bf-red;
+                    color: $bf-red;
+                    margin: 9px 3rem;
+                    @include border-radius(1.8rem);
+                    padding: 10px 5px;
+                    text-align: center;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .navbar-menu-close-wrapper{
+            display: none;
+        }
+    }
+    @include for-size(mobile){
+        .bf-navbar-link{
+            display: block;
+            line-height: 3rem;
+            padding: 0 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            &:after{
+                border-bottom: 1px solid rgba(251, 240, 240, 0.3);
+            }
+            @include font-size(14);
+            &:last-child{
+                &:after {
+                    border: none;
+                }
+            }
+            &:nth-of-type(1){
+                margin-top: 50px;
+            }
+            &-deactive{
+              display:none;
+            }
+            &.my-carts{
+                position: relative;
+                .my-cart-items-count{                        
+                    display: inline-block;
+                    background-color:#FFF;
+                    color: $bf-red;                        
+                    min-width:24px;
+                    padding: 0 5px;
+                    line-height: 24px;
+                    text-align: center;
+                    @include text-shadow( none );
+                    @include border-radius(24px);
+                }
+            }            
+        }
+    }
+}
+
+#navbar-menu-toggle,
+#navbar-logo,
+#navbar-cart,
+#navbar-login
+{
+    @include for-size(desktop){
+        display: none;
+    }
+    @include for-size(mobile){
+        @include flex(1);
+        display:inline-block;
+        height: $mobile_navbar_height;
+        line-height: $mobile_navbar_height;
+    }
+}
+
+#navbar-menu-toggle{
+    background:transparent url("assets/images/common/menu-arrow-icon.png") no-repeat left center scroll;
+    padding-left: 25px;
+    color: $bf-red;
+    @include font-size(16);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#navbar-login{
+    color: $bf-red;
+    @include font-size(16);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#navbar-logo{
+    background:transparent url("assets/images/common/logo-mobile.png") no-repeat center center scroll;
+    width: $mobile_navbar_height;
+    @include for-size(desktop){
+        display: inline-block;
+        background:transparent url("assets/images/common/logo.png") no-repeat center center scroll;
+        width: 75px;
+        height: 75px;
+    }
+}
+
+#navbar-cart{
+    background:transparent url("assets/images/common/cart-icon.png") no-repeat right center scroll;
+    width: $mobile_navbar_height;
+}
+
+#navbar-menu-close{
+    display: inline-block;
+    background:transparent url("assets/images/common/menu-close-icon.png") no-repeat left center scroll;
+    line-height: $mobile_navbar_height;
+    height: $mobile_navbar_height;
+    width: $mobile_navbar_height;
+}
+
+#bf-navbar-menu{
+    @include display-flex();
+    @include align-items(center);
+    .bf-navbar-link{
+        flex: 1;
+        width: 0;
+        text-align: center;
+    }
+    @include for-size(desktop){
+        .bf-navbar-menu{
+            float:left;
+        }
+    }    
+    @include for-size(mobile){
+        display: none;
+        &.open{
+            display:block;
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index: $z_index_navbar_menu;
+            background:$bf-red;
+            a{
+                color:#FFF;
+            }
+            .navbar-menu-close-wrapper{
+                padding-left: 1rem;
+                background:#FFF;
+            }
+        }
+
+        .bf-navbar-link{
+            width: auto;
+        }
+    }
+
+    @include for-size("(min-width: 1024px) and (max-width: 1199px)"){
+        .bf-navbar-link{
+            margin: 20px 0 20px 0;
+
+            &:first-child{
+                margin-left: 0;
+            }
+
+            &.my-carts{
+                margin-left: 1rem;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
+
+@include for-size(mobile){
+    // .user_logged_in{
+        .bf-navbar-menu-head{
+            display: block;
+            position: relative;
+            height: 60px;
+            #navbar-menu-toggle{
+                position: absolute;
+                top:0;
+                left:0;                
+            }
+            #navbar-logo{
+                position: absolute;
+                width:auto;
+                top:0;
+                left:80px;
+                right:80px;
+            }
+            #navbar-cart{
+                width:30px;
+                position: absolute;
+                top:0;
+                right:0;
+            }
+            #navbar-login{
+                position: absolute;
+                top:0;                
+                right:40px;
+            }
+        }
+    // }
+}

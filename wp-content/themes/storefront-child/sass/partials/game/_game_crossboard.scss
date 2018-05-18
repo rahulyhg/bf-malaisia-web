@@ -1,0 +1,42 @@
+.crossboard{
+    .btn{
+      width:50px;
+      height:50px;
+      line-height: 40px;
+      text-align: center;
+      background: #fff1d4;
+      border:1px solid #6ec877;
+      font-weight: bold;
+      color:#966228 !important;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      &.selected{
+        background: #fd0000 !important;
+        color: #f2eeae !important;
+      }
+      &.disabled{
+        background: #ffff00;
+        color: #f90000;
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }  
+  }
+  .matched-word-lists{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    a{
+      font-weight: bold;
+      background: $bf-red;
+      color:#FFF;
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 15px;
+      &.selected{
+        color:$bf-red;
+        background:$bf-yellow;
+      }
+    }
+  }

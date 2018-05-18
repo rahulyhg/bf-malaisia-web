@@ -1,0 +1,86 @@
+.witness {
+  @include for-size(mobile){
+    >.container{
+      >.row{
+        @include flex-direction(column);
+      }
+    }
+    .video{
+      padding: 10px !important;
+      @include flex(1);
+      max-width: 100%;
+      iframe{
+        margin: 0 auto;
+      }
+    }
+
+    .text{
+      padding: 10px !important;
+      text-align: center;
+      @include font-size(20);
+    }
+    .bf-block-witness{
+      margin: 0 !important;
+      @include flex(1);
+      max-width: 100%;
+      text-align: center;
+      padding: 1rem 0 !important;
+    }
+    .text-center{
+      a{
+        margin: 25px 0 0 !important;
+      }
+    }
+
+  }
+
+
+  @include for-size("(min-width: 768px) and (max-width:1023px)"){
+    .video{
+      margin-top: 10px !important;
+    }
+    .text{
+      padding: 0 !important;
+    }
+  }
+  @include for-size("(min-width: 320px) and (max-width:767px)"){
+    .bf-block-witness{
+      margin-left: 0 !important;
+      padding: 0 !important;
+    }
+    .block-title{
+      .bf-title {
+        @include font-size(21);
+      }
+    }
+  }
+}
+
+
+
+.witness{
+  background:$bf-yellow ;
+  .bf-block-witness{
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin-left: 2rem ;
+  }
+  .text{
+    @include font-size(17);
+    text-transform: uppercase;
+    @include font_varela('bold');
+  }
+  .video {
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+
+  }
+}
+
+//end wintness-by-yourself

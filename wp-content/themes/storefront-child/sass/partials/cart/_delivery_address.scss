@@ -1,0 +1,64 @@
+
+.title-delivery{
+  @include font-size(18);
+  @include font_open_sans($font_os_bold);
+  padding-bottom: 2rem;
+}
+  #customer_details{
+    width: 100%;
+    .form-row textarea {
+      border: solid 1px #ced4da !important;
+      box-shadow: none !important;
+      background: none !important;
+    }
+    .title-label {
+      @include font_open_sans($font_os_bold);
+      @include font-size(10);
+    }
+  }
+  .woocommerce-billing-fields__field-wrapper{
+    .form-row input[type=radio] {
+      margin: 0 3rem;
+    }
+    .input-text {
+      border: solid 1px #ced4da;
+      box-shadow: none;
+      border-radius: 0.5rem;
+      background: none;
+    }
+  }
+  .woocommerce-shipping-fields {
+    span {
+      @include font-size(18);
+      @include font_open_sans($font_os_bold);
+    }
+  }
+  .order-review {
+    #order_review_heading {
+      width: 100%;
+      @include font-size(18);
+      @include font_open_sans($font_os_bold);
+      padding-bottom: 2rem;
+    }
+    #order_review {
+      width: 100%;
+      @include font_open_sans($font_os_bold);
+    }
+    .btn-primary {
+      color: #666;
+      border: solid 1px;
+      border-radius: 2rem;
+      background: none;
+    }
+  }
+  #payment {
+    text-align: center;
+    background: #f5f5f5 ;
+    padding: 4rem 0;
+    .place-order {
+      padding: 0;
+    }
+  }
+  .delivery-page {
+    background: white;
+  }

@@ -1,0 +1,45 @@
+
+.owl-carousel .owl-item img {
+  width: auto;
+  max-width: 100%;
+}
+
+.owl-prev, .owl-next {
+  position: absolute;
+  top: 50%;
+  background: none !important;
+}
+
+.owl-prev {
+  left: -12px
+}
+
+.owl-next {
+  right: -12px;
+}
+
+.owl-controls {
+
+}
+
+@include for-size(mobile) {
+  .owl-dots {
+    display: none;
+  }
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin: 0;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  background: none;
+  padding: 0;
+  span {
+    width: 15px;
+    height: 15px;
+  }
+  &.active span {
+    background-color: $bf-red;
+  }
+}

@@ -1,0 +1,199 @@
+@media screen and(max-width: 768px) {
+
+}
+@media (min-width: 576px) {
+  #popupWinner .modal-dialog {
+    max-width: 800px;
+  }
+}
+#popup {
+  width: 664px;
+  margin: 0 auto;
+  background: $bf-yellow;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  .close-popup{float:right; cursor: pointer;}
+    a { color: #000000;
+      text-decoration: none}
+    h1{
+      text-transform: uppercase;
+      font-family: $rubik;
+      color: $bf-red;
+      font-weight: bold;
+      @include font-size(40.5);
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  /*popupLogin*/
+  .popup-login {
+    height: 519px;
+    padding: 15px 20px 60px 60px;
+    h1 { margin-bottom: 25px}
+    span{
+      float:right;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    .label-name {
+      float: left;
+      text-transform: uppercase;
+      margin-right: 40px;
+      label {
+        display: block;
+        color: $bf-red;
+        font-weight: bold;
+        font-family: $rubik;
+        padding: 6px 0;
+        @include font-size(22);
+      }
+    }
+    .input-name {
+      float: left;
+      width: 336px;
+      input {
+        display: block;
+        border: solid 1px black;
+        background: none;
+        border-radius: 30px;
+        width: 100%;
+        margin-bottom: 22px;
+        height: 45px;
+        padding: 0 15px;
+      }
+      .forgot-password {
+        float: right;
+        font-size: 20px;
+        font-family: $font_os_bold;
+        a{ border-bottom: solid 1px}
+      }
+    }
+    .sigup {
+      float: left;
+      padding: 60px 50px;
+      span{
+        @include font-size(18);
+        font-family: $rubik;
+      }
+      a{
+        color: $bf-red;
+        text-transform: uppercase;
+        font-weight: bold;
+      ;
+      }
+    }
+  }
+  //end-popupLogin
+
+  //popup Congratulation
+
+  #popup-congratulation{
+    height: 350px;
+    padding: 50px 85px;
+    h1 {font-weight: 500}
+    .text-winner{
+      text-align: center;
+      float: left;
+      padding: 10px 88px 34px 88px;
+      span{
+        @include font-size(22);
+        font-weight: 500;
+      }
+    }
+    .oder {
+      width: 100%;
+      float: left;
+      text-align: center;
+      button {
+        text-transform: uppercase;
+        border: solid 2px $bf-red;
+        border-radius: 30px;
+        width: 188px;
+        background: none;
+        color: $bf-red;
+        @include font-size(22);
+        padding: 5px 45px;
+      }
+    }
+  }
+  //end popup Congratulation
+
+  //content-block-popup
+  #content-block-popup{
+    height: 350px;
+    padding: 15px 15px 30px 32px;
+        p{
+          @include font-size(14);
+          font-family: $font_os_normal;
+          padding-right: 45px;
+          padding-top: 20px;
+        }
+  }
+  //end content-block-popup
+
+  // game
+  #game-winner-popup{
+    height: 350px;
+    padding: 15px 20px 50px 85px;
+    p{
+      white-space: pre-line;
+      @include font-size(15);
+      text-align: center;
+      padding-right: 45px;
+    }
+  }
+  //end game
+
+  //subcription
+  #subcription-popup{
+    height: 519px;
+    padding: 15px 20px 50px 85px;
+    p{
+      @include font-size(22);
+      font-family: $rubik;
+      text-align: center;
+      margin: 50px 0;
+      line-height: 30px;
+      text-transform: uppercase;
+      margin-right: 20px;
+    }
+    span {
+      @include font-size(22);
+      font-family: $rubik;
+      color: $bf-red;
+      margin-right: 10px;
+      float: left;
+      font-weight: 500;
+    }
+    input {
+      display: block;
+      border: solid 1px black;
+      background: none;
+      border-radius: 30px;
+      width: 70%;
+      margin-bottom: 22px;
+      height: 45px;
+      padding: 0 15px;
+      float: left;
+    }
+
+    .submit {
+      width: 100%;
+      float: left;
+      text-align: center;
+      margin: 60px 0;
+      button {
+        text-transform: uppercase;
+        border: solid 2px $bf-red;
+        border-radius: 30px;
+        width: 188px;
+        background: none;
+        color: $bf-red;
+        @include font-size(22);
+        padding: 5px 25px;
+      }
+    }
+  }
+
+  //end subcription
+}

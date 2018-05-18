@@ -1,0 +1,56 @@
+/*!
+Theme Name:     Storefront Child Theme
+Theme URI:      https://github.com/stuartduff/storefront-child-theme
+Author:         Stuart Duff
+Author URI:     http://stuartduff.com
+Template:     	storefront
+Description:  	This is a blank child theme for WooThemes StoreFront theme
+Version:      	1.0.0
+License:      	GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  	storefront
+Tags:         	black, white, light, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+Storefront is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
+Images License: GNU General Public License v2 or later
+*/
+/* vendor */
+@import "vendor/bootstrap";
+@import "bs/var";
+@import "bs/font";
+@import "bs/reset";
+@import "bs/mixin";
+@import "compass/css3";
+@import "lib/owl.carousel";
+@import "lib/owl.theme.default";
+@import "lib/jquery.bxslider";
+/* global reset */
+@import "global";
+/* partials */
+@import "partials/footer";
+@import "partials/header";
+@import "partials/dialogs";
+@import "partials/slider";
+@import "partials/subscription";
+@import "partials/popup";
+@import "partials/blocks";
+/** Override css for each page **/
+@import "pages/home";
+@import "pages/myaccount";
+@import "pages/ourbrand";
+@import "pages/prizes"; // or games
+@import "pages/products";
+@import "pages/signup";
+@import "pages/winners";
+@import "pages/carts";
+@import "pages/posts";
+@import "pages/videos";
+@import "pages/games"; // game view page.
+@import "pages/game1";
+@import 'editor_style_shared';
+@import "pages/game4";

@@ -1,0 +1,23 @@
+@include for-size(("(min-width: 320px) and (max-width:1023px)")){
+  .detail-list{
+    .list-video {
+      width: 100% !important;
+    }
+  }
+}
+.detail-list{
+  text-align: center;
+  padding-top: 2rem;
+  .list-video {
+    width: 33%;
+    padding: 0 1rem;
+    .video-meta-data {
+      padding: 1rem 2rem;
+      text-align: justify;
+    }
+    .text {
+      font-weight: 600;
+    }
+  }
+}
+

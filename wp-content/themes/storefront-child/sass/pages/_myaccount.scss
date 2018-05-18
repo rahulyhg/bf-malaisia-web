@@ -1,0 +1,128 @@
+@import "partials/profile/order_history";
+@import "partials/profile/user_information";
+
+
+@include for-size(mobile){
+  .show-desktop {
+    display: none;
+  }
+}
+@include for-size(("(min-width: 320px) and (max-width:1023px)")){
+  .title-hello { margin-left: 0 !important;}
+  .recent-destop { display: none;}
+  .rencent-mobile {display: block !important;}
+  .hello { margin: 0.5rem 0 !important; text-align: left !important;}
+  .tab-order-mobile, .tab-informaton-mobile { display: block !important;
+  text-align: left !important;
+  }
+  .tab-content{ padding-top: 1rem}
+}
+.show-desktop {
+  padding: 1rem 0;
+}
+.myaccount {
+  padding: 0;
+}
+
+.hello {
+  background: $bf-dark-red;
+  text-align: center;
+  padding: 0.8rem 0;
+  color: $bf-yellow;
+  @include font-size(15);
+  @include font_rubik($rubik);
+  margin: 0;
+}
+.title-hello{ float: left; margin-left: 30%;}
+
+.rencent-mobile { display: none}
+.profile-tab{
+  padding: 0;
+}
+.logout {
+  a{
+    color: $bf-yellow ;
+    border: solid 1px;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    padding: 0.3rem 1.5rem;
+    float: right;
+    @include font-size(12);
+  }
+}
+
+.nav{
+  margin: 0;
+  padding: 0.3rem 0 0.9rem 0;
+  .nav-item {
+    border: solid 1px $bf-dark-red;
+    border-radius: 2rem;
+    padding: 0;
+  }
+}
+.tab-order, .tab-informaton{
+  text-align: center;
+  color: $bf-dark-red;
+  @include font-rubik($font_rubik_normal);
+  @include font-size(18);
+  width: 49% ;
+}
+.tab-order { margin-right: 1rem}
+.tab-order-mobile, .tab-informaton-mobile {
+  border: solid 2px $bf-dark-red;
+  border-radius: 2rem;
+  color: $bf-dark-red;
+  @include font-rubik($rubik);
+  @include font-size(14);
+  width: 100% ;
+  text-align: center;
+  padding: 0.8rem;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+.icon-up {
+  background: url($images-path + 'common/list-none.png') no-repeat;
+  width: 4rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+.icon-down {
+  background: url($images-path + 'common/list-down.png') no-repeat;
+  width: 4rem;
+  height: 3rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  display: none;
+}
+
+.woocommerce-pagination{
+  margin: 10px 0;
+}
+
+#ui-datepicker-div{
+  z-index: $z_index_date_picker!important;
+}
+
+.edit-account {
+	.select2-selection--single {
+	  background-color: #f2f2f2;
+	  border-radius: 2rem;
+	  border: 0;
+	  height: 100%;
+	  box-sizing: border-box;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.125);
+    text-align: center;
+	  .select2-selection__rendered {
+	     padding: 0.8rem;
+	  }
+	  .select2-selection__arrow {
+	     padding: 0.8rem;
+      height: 100%;
+	  }
+	}
+}

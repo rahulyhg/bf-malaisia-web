@@ -1,0 +1,454 @@
+@import "partials/cart/delivery_address";
+@import "partials/cart/confirmation";
+@import "partials/cart/my_cart";
+
+.link-page {
+  text-align: left;
+  font-weight: normal;
+}
+.bg-cart-white {
+  background: white ;
+  padding: 2rem 0 0;
+  @include font_varela(extra-bold);
+  .nav .nav-item {
+    border: none;
+    @include for-size(desktop){
+      width: 300px;
+    }
+    @include for-size(mobile){
+      width: 33%;
+    }    
+    &:nth-of-type(1){      
+      float:left;    
+      text-align: left;
+      .nav-item-text{
+        background: #FFF url("assets/images/common/b1-g.png") center top no-repeat scroll;
+        &.active{
+          background-image: url("assets/images/common/b1-red.png");
+        }
+      }
+    }
+
+    &:nth-of-type(2){
+      text-align: center;
+      .nav-item-text{
+        background: #FFF url("assets/images/common/b2-g.png") center top no-repeat scroll;
+        &.active{
+          background-image: url("assets/images/common/b2-red.png");
+        }        
+      }
+    }
+
+    &:nth-of-type(3){
+      float:right;
+      text-align: right;
+      .nav-item-text{
+        background: #FFF url("assets/images/common/b3-g.png") center top no-repeat scroll;
+        &.active{
+          background-image: url("assets/images/common/b3-red.png");
+        }        
+      }
+    }
+  }
+
+  .breadcrumb-cart{
+    background: url("assets/images/common/line.png") left 40%  repeat-x;
+    @include for-size(desktop){
+      max-width: 900px;
+    }
+    margin: 0 auto;
+    .nav-item-text{
+      padding-top: 73px;
+      display: inline-block;
+      min-width: 70px;      
+      text-align: center;
+    }
+  }
+
+  .nav-link.active {
+    color: $bf-dark-red;
+    background: none !important;
+  }
+
+}
+.bg-cart-header {
+  padding: 1rem 0;
+}
+
+.cart-empty{
+  margin: 3rem 0;
+}
+.return-to-shop,.cart-empty{
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 3rem;
+}
+
+.woocommerce-checkout{
+	.two-col {
+	   p {
+	     &.address-field-city {
+		     @include for-size(desktop){
+	          width: 45%;
+	          float: left;
+	        }
+	     }
+	     &.address-field-ward {
+	       @include for-size(desktop){
+	          width: 45%;
+	          float: right;
+	          clear: none;
+	          margin-right: 5px;
+	        }
+       }
+	   }
+	}
+  .checkout{
+    .payment_method_cod{
+      label{
+        &:before{
+          content: '' !important;
+        }
+        cursor: auto;
+        padding: 0.4rem 0 !important;
+        border: 1px solid $bf-gray-light;
+        color: $bf-dark-red;
+        max-width: 400px;
+        margin: 1rem auto;
+        text-align: left;
+        @include border-radius(5px);
+      }
+    }
+    #payment{
+      background: none;
+      .title{
+        @include font_open_sans($font_os_bold);
+      }
+    }
+    .payment_methods {
+      > li:not(.woocommerce-notice){
+        &:hover{
+          background: none !important;
+        }
+        background: none !important;
+      }
+
+      .payment-design{
+        background: none;
+      }
+
+      p{
+        color: $bf-gray-dark;
+        @include font_open_sans($font_os_normal)
+      }
+      .disclaimer-text{
+        display: block;
+        color: $bf-gray-dark;
+        @include font_open_sans($font_os_normal);
+        font-size: 7px;
+        margin-top: 10px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  button[type="submit"]{
+    border: 1px solid $bf-red;
+    color: $bf-red;
+    @include font_rubik($font_rubik_bold);
+    text-transform: uppercase;
+    &:focus, &:active{
+      @include box-shadow(none);
+      background: none !important;
+      border: 1px solid $bf-red !important;
+      color: $bf-red !important;
+    }
+  }
+}
+
+.bf-default-bg{
+  &.bf-checkout-block{
+    background-color: #FFFFFF;
+  }
+}
+
+#customer_details{
+  padding: 1rem 0;
+}
+.woocommerce-cart-form.my-cart{
+  .checkout-button,
+  button[name="update_cart"]
+  {
+    margin: 0px auto;
+    padding:0 15px;
+    min-width: 150px;
+    text-align: center;
+    background:#FFF;
+    color: $bf-red;
+    font-size: 1.4rem;            
+    @include font_varela(extra-bold);
+    @include border-radius(30px);
+    text-transform: uppercase;
+    line-height: 3rem;    
+    &.hidden{
+      display: none;
+    }
+  }
+
+  .col-remove{
+    .cart-icon-remove{
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      @include for-size(desktop){
+        background: transparent url("assets/images/common/my-cart_delete.png") no-repeat center center scroll;
+      }
+      @include for-size(mobile){
+        background: transparent url("assets/images/common/my-cart_delete_mobile.png") no-repeat center center scroll;
+      }
+    }
+  }
+  .col-quantity{
+    .quantity{
+      display: block;
+      text-align: center;
+      margin: 0;
+      @include display-flex();
+      @include justify-content(center);
+      @include align-items(vertical-align);
+      .label{
+        display: none;
+      }
+      .qty{
+          padding: 0;
+          height: 30px;
+          line-height: 30px;
+          background: transparent !important;
+          border:none;
+          color: $bf-red;
+          font-size: 1.4rem;
+          @include font_open_sans(extra-bold);
+          @include box-shadow(none);
+          width: 3em;
+      }
+      .quantity-decrease,
+      .quantity-increase{
+        width: 18px;
+        line-height: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+      }          
+    }
+  }
+    
+  @include for-size(desktop){
+    .my-cart_table-wrapper{
+      //max-height: 575px;
+    }
+    .my-cart_table{
+      display: table;
+      width:100%;
+      
+    }
+    .my-cart_row{
+      width:100%;
+      display: table-row;
+    }
+    .my-cart_col{
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      font-size: 1.4rem;
+      padding: 10px;
+    }
+    .my-cart_head .my-cart_col{
+      background: $bf-dark-red;
+      color: $bf-yellow;
+      @include font_rubik($font_rubik_normal);
+      @include font-size(14);
+      border-right: solid 1px white;
+      text-align: center;    
+      &.col-remove{
+        border-right: none;
+      }      
+    }
+    .my-cart_row.cart_item .my-cart_col{
+      background: #fee983;
+      border-top: solid 6px $bf-yellow;    
+      border-right: solid 1px white;
+      @include font_open_sans($font_os_bold);      
+      &.col-remove{
+        border-right: none;
+      }
+    }
+    .col-picture a{
+      display: inline-block;
+      img{
+        max-width: 140px;
+        height: auto;
+      }
+    }
+    .col-quantity .quantity{
+      .quantity-decrease{
+          background-image: url('assets/images/common/icon-quantity-decrease.png');
+      }
+      .quantity-increase{
+          background-image: url('assets/images/common/icon-quantity-increase.png');
+      }      
+    }
+    .col-total{
+      color:$bf-red;
+      .total-label{
+        display: none;
+      }
+    }
+  }
+
+  @include for-size(mobile){
+    max-width: 460px;
+    margin:0px auto;
+    padding: 30px 0px 0;
+    .my-cart_table-wrapper{
+      // max-height: 235px * 2;
+      margin: 0 10px;
+    }
+    .my-cart_table{      
+      background: #ba161c;      
+      overflow: hidden;
+    }
+    .my-cart_row.my-cart_head{
+      display:none;
+    }
+    .my-cart_row.cart_item{
+      @include display-flex();
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+      @include justify-content(space-between);      
+      font-size: 1.4rem;
+      padding: 10px 10px 70px 10px;
+      position: relative;
+      height: 10px + 70px + 120px + 30px;
+      margin-bottom: 5px;
+      background: #820f14;
+      color: #FFF;
+      .my-cart_col{
+        width: 60%;        
+      }
+      .col-picture{
+        a{
+          display: block;
+          img{
+            width:100%;
+            height:100%;
+          }
+        }
+      }
+      .col-quantity .quantity{
+        .quantity-decrease{
+            background-image: url('assets/images/common/icon-quantity-decrease-mobile.png');
+        }
+        .quantity-increase{
+            background-image: url('assets/images/common/icon-quantity-increase-mobile.png');
+        }
+        .qty{
+          color:#FFF;
+        }
+      }
+      .col-id,.col-product,.col-price{
+        font-weight: bold;
+        line-height: 30px;        
+      }
+      .col-id{
+        font-weight: normal;
+        margin-left: 10px;        
+        height: 30px;
+      }
+      .col-product{       
+        margin-left: 10px; 
+        height: 90px;
+        overflow: hidden;
+      }
+      .col-price{
+        margin-left: 10px;
+        color: $bf-yellow;    
+        position: relative;
+        &:after{
+          position: absolute;
+          content: "";
+          display: block;
+          width:100%;
+          height: 1px;
+          background-color: $bf-yellow;
+          bottom: -10px;
+          right: 0;
+        }
+      }
+
+      .col-picture{ @include order(1); }
+      .col-quantity{ @include order(2); }
+      .col-total{ @include order(3); }
+      .col-id{ @include order(4); }
+      .col-product{ @include order(5); }
+      .col-price{ @include order(6); }
+      .col-remove{ @include order(7); }
+      
+      .col-quantity,.col-picture{
+        width:120px;
+      }
+      .col-picture{
+        height: 120px;
+      }
+      .col-quantity{
+        height: 30px;
+      }
+      .col-total{        
+        position: absolute;
+        bottom: 0;
+        left: 0px;
+        width: 100%;
+        padding: 0px 0px 20px 0px;
+        .woocommerce-Price-amount.amount{
+          display: inline-block;          
+          line-height: 30px;
+          color: $bf-yellow;
+          font-weight: bold;          
+        }
+        .col-total-inner{
+          height: 30px;
+          @include display-flex();
+          @include flex-direction(column);
+          @include flex-wrap(wrap);
+          @include justify-content(space-between);       
+          .total-label{
+            width: 140px;
+            text-align: right;
+            line-height: 30px;
+            padding-right: 10px;
+          }
+          .woocommerce-Price-amount.amount{
+            width: 60%;
+          }
+        }
+        text-align: left;
+        z-index: 9;
+      }
+      .col-remove{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width:60px;
+        height: 60px;
+        z-index: 10;
+        a{
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@include for-size(mobile){
+}

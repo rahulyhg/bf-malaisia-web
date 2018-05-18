@@ -1,0 +1,27 @@
+.red-headline{
+    color: $bf-red;
+    @include font_open_sans($font_os_bold);    
+}
+.bf-text-red{
+    color:red;
+}
+.bf-page-content{
+    h2,h3,h4,h5,h6{
+        margin-bottom: 1rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+    h3{
+        font-size: 1.6rem;
+    }
+    h4{
+        font-size: 1.4rem;
+    }
+    h5{
+        font-size: 1.2rem;
+    }
+    h6{
+        font-size: 1rem;
+    }
+}

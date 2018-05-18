@@ -1,0 +1,111 @@
+.bf-banner{
+    position: relative;
+    padding: 3em 0 0;
+    p {
+        text-align: justify;
+    }
+
+    .bf-banner-image, .bf-banner-des{
+        @include display-flex();
+        @include justify-content(center);
+        @include flex-direction(column);
+        text-align: center;
+    }
+
+    @include for-size(desktop)
+    {
+        .bf-banner-image{
+            @include order(2);
+        }
+        .bf-banner-des{
+            @include order(1);
+        }        
+        .bf-banner-des{
+            padding: 0 8em 0;
+        }
+        .bf-banner-image{
+            padding-right: 5em;
+        }
+        .owl-dots{
+            padding-top: 35px;
+            padding-bottom: 55px;
+        }
+        div.bf-banner-title {
+            letter-spacing: 5px;
+            @include font-size(28);
+            margin-bottom: 0.5em;
+        }
+        p{
+            @include font-size(14);
+        }
+
+        .on-mobile{
+            display: none;
+        }
+    }
+
+    @include for-size(mobile){
+        div.bf-banner-title {
+            letter-spacing: 3px;
+            line-height: 2em;
+        }
+
+        .owl-prev,.owl-next{
+            top: 25%;
+        }
+        .owl-prev{
+            left: -25px;
+        }
+        .owl-next{
+            right: -25px;
+        }
+
+        .on-desktop{
+            display: none;
+        }
+        .bf-banner-image > a{
+            padding: 0 15px;
+        }
+    }
+
+    @include for-size(small-desktop){
+        .bf-banner-des{
+            padding: 0 4em 0;
+        }
+    }
+
+    @include for-size("(min-width: 768px) and (max-width: 991px)"){
+        .owl-prev{
+            left: -8%;
+        }
+        .owl-next{
+            right: -8%;
+        }
+    }
+
+    @include for-size("(min-width: 992px) and (max-width: 1023px)"){
+        .owl-prev{
+            left: -4%;
+        }
+        .owl-next{
+            right: -4%;
+        }
+    }
+
+    @include for-size("(min-width: 320px) and (max-width: 450px)"){
+        .owl-prev,.owl-next{
+            top: 90px;
+        }
+    }
+
+    &-title{
+        @include font_rubik($font_rubik_black);
+        @include font-size(40);
+        color: $bf-red;
+        text-transform: uppercase;
+        text-align: center;
+        @include for-size(mobile){
+            @include font-size(24);
+        }
+    }  
+}

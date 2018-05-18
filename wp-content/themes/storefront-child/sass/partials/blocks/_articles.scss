@@ -1,0 +1,40 @@
+.block-articles{
+    background: $bf-red;
+    .article-item{
+        .title{
+            text-align: center;
+            color: $bf-yellow;
+            font-size:1.3rem;
+            text-transform: uppercase;
+            @include font_varela(bold);
+        }
+        .description{
+            color: #FFF;
+            text-align: justify;
+            margin: 1.5rem 0;
+            p{
+                margin:0;
+            }
+        }
+        .row-readmore{
+            text-align: right;
+        }
+        .btn-readmore{
+            font-size: 1.3rem;            
+            color: $bf-yellow;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    .list{
+        @include for-size(mobile){
+            .article-item{
+                margin-top: 3rem;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

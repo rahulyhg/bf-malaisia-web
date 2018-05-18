@@ -1,0 +1,49 @@
+/*
+* Path variables
+*/
+$font-path: 'assets/fonts/';
+$images-path: 'assets/images/';
+
+/*
+* Colors variables
+*/
+$bf-yellow: #fcd307;
+$bf-red: #c2171d;
+$bf-dark-red: #ba161c;
+$bf-white: #fff;
+$bf-black: #000;
+$bf-gray: #231f20;
+$bf-gray-light: #ced4da;
+$bf-gray-dark: #787878;
+/*
+* Font variables
+*/
+@function font_base_generator($rubik){
+@return $rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+$rubik: 'HelveticaNeueX';
+$myriadProRegular: 'MyriadProRegular';
+$rubik_medium: 'RubikMedium';
+$rubik_medium_italic: 'RubikMediumItalic';
+$font_rubik_normal : "normal";
+$font_rubik_bold: "bold";
+$font_rubik_black: "black";
+$font_rubik_medium : "medium";
+$font_os_normal : "normal";
+$font_os_bold: "bold";
+$font_os_semibold : "semibold";
+$font-family-base: font_base_generator($rubik);
+$font-family-medium: font_base_generator($rubik_medium);
+$font-family-medium-italic: font_base_generator($rubik_medium_italic);
+$font-family-myriad: font_base_generator($myriadProRegular);
+$font-elleFutura-blod: "ElleFuturaBold";
+$font-elleFutura-book: "ElleFuturaBook";
+
+/*
+* z-index
+*/
+$z_index_navbar_menu: 99999999;
+$z_index_modal: 99999999 + 1;
+$z_index_date_picker: $z_index_navbar_menu - 1;
+$z_index_game_rotate: $z_index_navbar_menu + 1;
+

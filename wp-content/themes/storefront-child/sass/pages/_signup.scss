@@ -1,0 +1,105 @@
+.block-signup{
+  label{
+    @include font_rubik($font-rubik_bold);
+    @include font-size(13.5);
+    color: $bf-red;
+    letter-spacing: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1.8rem;
+    text-transform: uppercase;
+  }
+
+  #registerform{
+    max-width: 770px;
+    margin: 0 auto;
+  }
+
+  input{
+    background: $bf-white;
+    padding: 0.8rem 0;
+    border-radius: 20px;
+  }
+
+  .group-sub{
+    margin-bottom: 10px;
+  }
+
+  .form-check{
+    text-align: center;
+    label{
+      position: relative;
+      cursor: pointer;
+    }
+
+    .form-check-input{
+      position: absolute;
+      opacity: 0;
+      &:checked ~ .checkmark {
+        &:after{
+          content: "";
+          background: url(assets/images/common/checked.png) no-repeat center center;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+        }
+      }
+    }
+
+    .checkmark{
+      background: $bf-red;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -3rem;
+    }
+  }
+
+  .submit{
+    margin: 1rem 0 0;
+    text-align: center;
+    button{
+      @include font-size(14);
+      color: $bf-red;
+      background: $bf-white;
+      line-height: 1.2rem;
+      @include border-radius(25px);
+    }
+  }
+
+  .btn-signup{
+    @extend .btn-see-more;
+  }
+
+  .signup-disclaimer{
+    font-size:7px;
+  }
+
+  @include for-size(mobile){
+    .group-sub{
+      @include flex-direction(column);
+      >label, div{
+        flex: 1;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-bottom: 0;
+      }
+    }
+
+    .form-check{
+      margin: 2rem 0;
+
+      .checkmark{
+        left: -1rem;
+      }
+    }
+
+    .submit{
+      margin: 3rem 0 0;
+    }
+
+  }
+}

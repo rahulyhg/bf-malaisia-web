@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'HelveticaNeueX';
+  src: url($font-path + 'helveticaneuebolditalic.ttf'); font-weight: bold;font-style:italic,oblique;
+  src: url($font-path + 'helveticaneuebolditalic.eot'); font-weight: bold;font-style:italic,oblique;
+  src: url($font-path + 'helveticaneuebolditalic.woff'); font-weight: bold;font-style:italic,oblique;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueX';
+  src: url($font-path + 'helveticaneue.ttf'); font-weight:normal;
+  src: url($font-path + 'helveticaneue.eot'); font-weight:normal;
+  src: url($font-path + 'helveticaneue.woff'); font-weight:normal;
+}
+@font-face {
+  font-family: 'HelveticaNeueX';
+  src: url($font-path + 'helveticaneuebold.ttf'); font-weight:bold;
+  src: url($font-path + 'helveticaneuebold.eot'); font-weight:bold;
+  src: url($font-path + 'helveticaneuebold.woff'); font-weight:bold;
+}
+@font-face {
+  font-family: 'HelveticaNeueX';
+  src: url($font-path + 'helveticaneueitalic.ttf'); font-style:italic,oblique;
+  src: url($font-path + 'helveticaneueitalic.eot'); font-style:italic,oblique;
+  src: url($font-path + 'helveticaneueitalic.woff'); font-style:italic,oblique;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueX';
+  src: url($font-path + 'SVNHelveticaNeueHeavy.eot'); font-weight: 900;
+  src: url($font-path + 'SVNHelveticaNeueHeavy.eot') format('embedded-opentype'),
+       url($font-path + 'SVNHelveticaNeueHeavy.woff2') format('woff2'),
+       url($font-path + 'SVNHelveticaNeueHeavy.woff') format('woff'),
+       url($font-path + 'SVNHelveticaNeueHeavy.ttf') format('truetype'),
+       url($font-path + 'SVNHelveticaNeueHeavy.svg#SVNHelveticaNeueHeavy') format('svg'); font-weight: 900;
+}
+
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url($font-path + 'MyriadProRegular.eot');
+  src: local('☺'), url($font-path + 'MyriadProRegular.woff') format('woff'), url($font-path + 'MyriadProRegular.ttf') format('truetype'), url($font-path + 'MyriadProRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'ElleFuturaBold';
+  src: url($font-path + 'ElleFuturaBold.eot');
+  src: local('☺'), url($font-path + 'ElleFuturaBold.woff') format('woff'), url($font-path + 'ElleFuturaBold.ttf') format('truetype'), url($font-path + 'ElleFuturaBold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ElleFuturaBook';
+  src: url($font-path + 'ElleFuturaBook.eot');
+  src: local('☺'), url($font-path + 'ElleFuturaBook.woff') format('woff'), url($font-path + 'ElleFuturaBook.ttf') format('truetype'), url($font-path + 'ElleFuturaBook.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

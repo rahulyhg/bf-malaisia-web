@@ -1,0 +1,158 @@
+.game-1{
+  background: url("assets/images/games/game1/g1-background.png") center center;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+  .game-area{
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    .game-blocks{
+      max-width: 708px;
+      margin: 0 auto;
+      background-size: contain !important;
+      position: relative;
+      @include display-flex();
+      @include flex-flow(row wrap !important);
+      .g-item{
+        width: 118px;
+        height: 118px;
+      }
+    }
+    .game-pieces{
+      .img-pieces{
+        position: absolute;
+        bottom: 0;
+
+        &:nth-of-type(1){
+          top: 0;
+        }
+
+        &:nth-of-type(3){
+          top: -3rem;
+          right: 0;
+        }
+
+        &:nth-of-type(4){
+          bottom: 30%;
+          right: 0;
+        }
+
+        &:nth-of-type(5){
+          right: 0;
+          bottom: -3rem;
+        }
+      }
+    }
+  }  
+
+  .game-title{
+    padding-bottom: 2rem;
+    p{
+      text-align: center;
+      color: #fceeb4;
+      @include font_roboto();
+    }
+    h4{
+      text-align: center;
+      background: url("assets/images/games/game1/bg-guide.png") center center no-repeat;
+      background-size: cover;
+      color: $bf-red;
+      @include font_open_sans(extra-bold);
+      padding: 0.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .game-guide{
+    p{
+      margin: 2rem 0;
+      text-align: center;
+      padding: 0.4rem 0;
+      background: url("assets/images/games/game1/g1-bg-note.png") center center no-repeat;
+      background-size: cover;
+      @include font_roboto();
+      font-weight: 900;
+      @include font-size(18)
+    }
+  }
+
+  .rotate-game{
+    display: none;
+  }
+}
+
+
+@include for-size(("(min-width: 568px) and (max-width:1023px)")){
+  .game-1{
+    .game-area{
+      max-width: 100%;
+      background: url("assets/images/games/game1/g1-background.png") center center;
+      background-size: cover;
+      .game-blocks{
+        max-width: 400px;
+        .g-item{
+          width: 66px;
+          height: 66px;
+        }
+      }
+    }
+
+    .game-guide{
+      background: url("assets/images/games/game1/g1-background.png") center center;
+      background-size: cover;
+      padding: 2rem 0;
+    }
+    .img-pieces {
+      max-width: 50%;
+      max-height: 50%;
+    }
+    .piece2, .piece3{
+      height: 44%;
+    }
+  }
+
+  div.modal#popupSuccess{
+    .g1Success .car-object {
+      margin-bottom: -3rem;
+      max-width: 35%;
+      padding: 0;
+    }
+
+    .success-description{
+      padding: 2rem 0 !important;
+      margin: 0 !important;
+    }
+  }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait){
+  .rotate-game{
+    display: block !important;
+    background: $bf-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .game-1{
+    .game-area{
+      display: none;
+    }
+
+    .game-guide{
+      display: none;
+    }
+  }
+
+}
+
+.img-pieces {
+  position: absolute;
+}
+
+
+
