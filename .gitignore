@@ -2,3 +2,4 @@ data
 wp-config.php
 .htaccess
 .htpasswd
+.idea/*
