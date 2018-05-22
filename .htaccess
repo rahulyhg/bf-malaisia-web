@@ -155,3 +155,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
+
+AuthName "Restricted Area"
+AuthType Basic
+AuthUserFile /var/www/bestproducts.com.my/.htpasswd
+require valid-user
+
