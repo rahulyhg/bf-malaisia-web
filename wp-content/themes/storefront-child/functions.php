@@ -1,27 +1,8 @@
 <?php
 ini_set('session.cookie_httponly', 1);
 
-add_action( 'user_register', 'attact_campaign_id_with_user' );
-function attact_campaign_id_with_user($user_id) {
-	$campaign_id = isset($_COOKIE['bf-campaignid']) ? $_COOKIE['bf-campaignid'] : '';
-	update_user_meta($user_id, 'campaign_id', $campaign_id);
-}
-
-add_action('woocommerce_checkout_create_order', 'before_checkout_create_order', 20, 2);
-function before_checkout_create_order( $order, $data ) {
-	$campaign_id = isset($_COOKIE['bf-campaignid']) ? $_COOKIE['bf-campaignid'] : '';
-	$order->update_meta_data( 'campaign_id', $campaign_id );
-	$cookie_name = 'bf-campaignid';
-	unset($_COOKIE[$cookie_name]);
-	setcookie($cookie_name, '', time() - 3600);
-}
-
-$req = $_REQUEST;
-if (key_exists('campaignid', $req)) {
-	$cookie_name = "bf-campaignid";
-	$cookie_value = $req['campaignid'];
-	setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-}
+require_once 'BFTheme/Autoloader.php';
+new \BFTheme\UTM($_SERVER['REQUEST_URI']);
 
 function child_theme_assets($path = '', $return = false)
 {
